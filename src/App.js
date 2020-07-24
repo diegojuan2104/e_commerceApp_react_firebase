@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 
 
-import HomePage from './components/home_page/homepage.component';
+import HomePage from './pages/home_page/homepage.component';
 
 function App() {
   return (
