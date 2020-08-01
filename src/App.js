@@ -30,11 +30,8 @@ class App extends React.Component {
                 ...snapShot.data(),
               });
         });
-      } else {
-        setCurrentUser({
-           userAuth,
-        });
       }
+      setCurrentUser({setCurrentUser:userAuth})
     });
   }
 
@@ -47,13 +44,14 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Header></Header>
+        <Header/>
         <Switch>
           <Route exact path="/" component={HomePage}></Route>
           <Route exact path="/shop" component={ShopPage}></Route>
           <Route exact path="/signin" component={SignInAndSignUp}></Route>
           <Route exact path="/shop/hats" component={HatsPage}></Route>
-        </Switch>
+        </Switch
+        >
       </div>
     );
   }
@@ -63,4 +61,4 @@ const mapDispatchToProps = (dispatch) => ({
   setCurrentUser: user => dispatch(setCurrentUser(user))
 });
 
-export default connect(null)(App);
+export default connect(null,mapDispatchToProps)(App);
